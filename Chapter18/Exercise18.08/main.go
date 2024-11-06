@@ -4,7 +4,7 @@ import (
     "log"
 )
 
-func worker(in chan int, out chan int) {
+func worker(in, out chan int) {
     sum := 0
     for i := range in {
         sum += i
