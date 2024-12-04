@@ -12,7 +12,7 @@ type PageWithCounter struct {
     heading string
 }
 
-func (p PageWithCounter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (p *PageWithCounter) ServeHTTP(w http.ResponseWriter, r *http.Request) {
     p.counter++
     msg := fmt.Sprintf("Header: %s, Content: %s, page views: %d", p.content, p.heading, p.counter)
     w.Write([]byte(msg))
